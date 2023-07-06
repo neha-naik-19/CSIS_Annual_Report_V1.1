@@ -1,0 +1,961 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Lobster+Two&family=Patua+One&family=Rubik&family=Montserrat&family=Sniglet&display=swap&family=Poppins:wght@200&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"); */
+
+:root {
+    --Montserrat: "Montserrat", cursive;
+    --Snigle-font: "Sniglet", cursive;
+    --Rubik: "Rubik", cursive;
+    --Patua: "Patua+One", cursive;
+    --Lobster: "Lobster+Two", cursive;
+    --poppins: "poppins", cursive;
+    --light-black: #2e2c2caf;
+    --bggradient: linear-gradient(55deg, #ea1f25, #faaf19, #313376, #ea1f25);
+    --light-gray: rgb(255, 255, 255, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--poppins);
+}
+
+html,
+body {
+    height: 100%;
+    padding-top: 50px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #efefef;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .container-fluid {
+    background-color: white;
+    border-bottom: 5px solid #313376;
+    padding-bottom: 1%;
+}
+
+.navbar-light .bits {
+    color: #313376;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-left: 2vh;
+}
+
+.annualreport {
+    padding-left: 17%;
+    color: #71c1e6;
+    letter-spacing: 3px;
+}
+
+.dept {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 68%;
+    padding-right: 1%;
+}
+
+.dept span {
+    /* color: #696969; */
+    color: #313376;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.dept a i {
+    text-decoration: none;
+    color: #71c1e6;
+    font-size: 150%;
+}
+
+.navbar-light img {
+    margin-top: 2%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 54px 55px,
+        rgba(0, 0, 0, 0.1) 0px -12px 30px, rgba(0, 0, 0, 0.2) 0px 4px 6px,
+        rgba(0, 0, 0, 0.1) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.navbar {
+    /* margin-bottom: 10%; */
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+main.pubadd .card,
+main.pubeditview .card,
+main.pubupdate .card,
+main.pubbib .card,
+main.pubprint .card {
+    border: 0;
+    border-radius: 0.1875rem;
+    width: 90%;
+    margin-bottom: 30px;
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+    /* position: relative; */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* main.pubadd .card .card-title {
+    padding: 5px 0 20px 0;
+} */
+
+main.pubadd .card .card-header,
+main.pubeditview .card .card-header,
+main.pubupdate .card .card-header,
+main.pubbib .card .card-header,
+main.pubprint .card .card-header {
+    background: #fff;
+}
+
+main.pubadd .pubaddheadersmall,
+main.pubeditview .pubeditviewheadersmall,
+main.pubupdate .pubupdateheadersmall,
+main.pubbib .pubbibheadersmall,
+main.pubprint .pubprintheadersmall {
+    color: #808080;
+    margin-left: 2%;
+    font-size: 70%;
+}
+
+main.pubadd .container header,
+main.pubeditview .container header,
+main.pubupdate .container header,
+main.pubbib .container header,
+main.pubprint .container header {
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+main.pubadd .container header::before,
+main.pubeditview .container header::before,
+main.pubupdate .container header::before,
+main.pubbib .container header::before,
+main.pubprint .container header::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    height: 3px;
+    width: 27px;
+    left: 0;
+    border-radius: 8px;
+    /* background-color: #4070f4; */
+    background-color: #ea1f25;
+}
+
+main.pubadd .container form .card,
+main.pubeditview .container .card,
+main.pubupdate .container form .card,
+main.pubbib .container form .card,
+main.pubprint .container .card {
+    position: relative;
+    /* min-height: 490px; */
+    /* margin-top: 2%; */
+    background-color: #fff;
+    height: 74%;
+    max-height: 74%;
+    overflow-y: auto;
+}
+
+main.pubadd .container form .card,
+main.pubeditview .container .card,
+main.pubupdate .container form .card,
+main.pubbib .container form .card,
+main.pubprint .container .card {
+    position: absolute;
+    transition: 0.3s ease;
+}
+
+/* main.pubadd .container form .card.second,
+main.pubeditview .container .card.second {
+    opacity: 0;
+    pointer-events: none;
+} */
+
+main.pubadd .container form .card.second,
+main.pubupdate .container form .card.second {
+    opacity: 0;
+    pointer-events: none;
+}
+
+main.pubeditview .container .card.second {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sectiondeactive {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sectionactive {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+main.pubadd .container form .card .card-header .pubaddrefresh,
+main.pubeditview .container .card .card-header .pubeditviewrefresh,
+main.pubbib .container .card .card-header .pubbibrefresh,
+main.pubprint .container .card .card-header .pubprintrefresh {
+    color: #71c1e6;
+}
+
+/* main.pubadd .container form .input-field,
+main.pubeditview .container .input-field {
+    display: flex;
+    flex-direction: column;
+    margin: 4px 10%;
+} */
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    margin: 4px 10%;
+}
+
+/* main.pubadd .input-field label,
+main.pubeditview .input-field label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #2e2e2e;
+} */
+
+.input-field label,
+.select-field-ranking label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #2e2e2e;
+}
+
+/* main.pubadd .input-field input,
+main.pubadd .input-field select,
+main.pubadd .input-field textarea,
+main.pubeditview .input-field input,
+main.pubeditview .input-field select {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+} */
+
+.input-field input,
+.input-field select,
+.input-field textarea {
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    /* color: #333; */
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+
+/* 
+main.pubadd .form-check input {
+    margin: 25px 0;
+} */
+
+.pubaddformcheck,
+.pubupdateformcheck,
+.pubbibformcheck {
+    padding: 10% 35% 15%;
+}
+
+/* main.pubadd .form-check label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2e2e2e;
+} */
+
+.form-check label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #141414;
+}
+
+/* main.pubadd .input-field textarea {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    resize: none;
+} */
+
+.input-field textarea {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    resize: none;
+}
+
+/* main.pubadd .input-field select:is(:focus, :valid) {
+    background: #fff;
+} */
+
+.input-field select:is(:focus, :valid) {
+    background: #fff;
+}
+
+/* main.pubadd .input-field input:is(:focus, :valid),
+main.pubadd .input-field select:is(:focus, :valid),
+main.pubadd .input-field textarea:is(:focus, :valid) {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+} */
+
+.input-field input:is(:focus, :valid),
+.input-field select:is(:focus, :valid),
+.input-field textarea:is(:focus, :valid) {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+
+/* main.pubadd .input-field select,
+main.pubadd .input-field textarea {
+    color: #707070;
+} */
+
+.input-field select,
+.input-field textarea {
+    color: #141414;
+}
+
+/* main.pubadd .input-field input[type="date"] {
+    color: #707070;
+} */
+
+.input-field input[type="date"] {
+    color: #141414;
+}
+
+/* main.pubadd .input-field input[type="text"]:valid,
+main.pubadd .input-field input[type="date"]:valid,
+main.pubadd .input-field input[type="textarea"]:valid {
+    color: #000;
+} */
+
+.input-field input[type="text"]:valid,
+.input-field input[type="date"]:valid,
+.input-field input[type="textarea"]:valid {
+    color: #141414;
+}
+
+/* main.pubadd {
+    overflow: auto;
+} */
+
+main {
+    overflow: auto;
+}
+
+main.pubadd .btnpublication,
+main.pubeditview .btnpublication,
+main.pubupdate .btnpublication,
+main.pubbib .btnpublication,
+main.pubprint .btnpublication {
+    background: #71c1e6;
+    padding: 10px 0;
+    max-width: 120px;
+    width: 100%;
+    outline: #71c1e6;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    margin: 2% 0;
+    margin-left: calc(var(--bs-gutter-x) * 1.2);
+    transition: all 0.3s linear;
+}
+
+main.pubadd .pubaddbtnsubmit {
+    background: #faaf19;
+}
+
+main.pubadd .second {
+    margin-bottom: 10%;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 8%;
+    background: #343434;
+    font-size: 13px;
+    overflow-x: hidden;
+}
+
+footer .container-fluid p {
+    text-align: right;
+    margin-top: 1vmax;
+    margin-right: 1%;
+}
+
+footer #imgdiv {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1vmax;
+    margin-bottom: 1vmax;
+    margin-right: 1%;
+}
+
+/******* publication author table *******/
+
+main.pubadd .container form #pubaddtitledisplay,
+main.pubupdate .container form #pubupdatetitledisplay,
+main.pubbib .container form #pubbibtitledisplay {
+    color: #707070;
+    font-size: 13px;
+    width: 2%;
+}
+
+main.pubadd .container form .pubaddtablewrapper,
+main.pubupdate .container form .pubupdatetablewrapper,
+main.pubbib .container form .pubbibtablewrapper {
+    width: 90%;
+    margin: 30px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+main.pubadd .container form .pubaddtabletitle,
+main.pubupdate .container form .pubupdatetabletitle,
+main.pubbib .container form .pubbibtabletitle {
+    padding-bottom: 10px;
+    margin: 0 0 10px;
+}
+
+main.pubadd .container form .pubupdatetabletitle .pubaddnew,
+main.pubupdate .container form .pubupdatetabletitle .pubupdatenew,
+main.pubbib .container form .pubbibtabletitle .pubbibnew {
+    float: right;
+    height: 30px;
+    font-weight: bold;
+    font-size: 12px;
+    min-width: 100px;
+    border-radius: 50px;
+    line-height: 13px;
+    color: #fff;
+}
+
+main.pubadd .container form .pubaddtabletitle .pubaddnew i,
+main.pubupdate .container form .pubupdatetabletitle .pubupdatenew i,
+main.pubbib .container form .pubbibtabletitle .pubupdatenew i {
+    margin-right: 4px;
+}
+
+.pubaddtablediv,
+.pubupdatetablediv,
+.pubbibtablediv {
+    /* border: 1px solid red; */
+    height: 330px;
+    max-height: 330px;
+    overflow-y: auto;
+}
+
+.pubbibsearchtablediv {
+    height: 450px;
+    max-height: 450px;
+    overflow-y: auto;
+}
+
+table.pubaddtable,
+table.pubupdatetable,
+table.pubbibsearchtable,
+table.pubbibtable {
+    table-layout: fixed;
+    max-height: 330px;
+}
+
+/*** check from here for update ***/
+
+table.pubaddtable tr th,
+table.pubeditviewtable tr th,
+table.pubeditviewtablesearchresult tr th,
+table.pubupdatetable tr th,
+table.pubbibsearchtable tr th,
+table.pubbibtable tr th,
+table.pubprinttable tr th {
+    background: #435d7d;
+    /* background: #313376; */
+    color: #fff;
+}
+
+table.pubaddtable tr th,
+table.pubaddtable tr td,
+table.pubeditviewtable tr th,
+table.pubeditviewtable tr td,
+table.pubeditviewtablesearchresult tr th,
+table.pubeditviewtablesearchresult tr td,
+table.pubupdatetable tr th,
+table.pubupdatetable tr td,
+table.pubbibsearchtable tr td,
+table.pubbibtable tr td,
+table.pubprinttable tr th,
+table.pubprinttable tr td {
+    border-color: #e9e9e9;
+}
+
+table.pubaddtable th i,
+table.pubeditviewtablesearchresult th i,
+table.pubupdatetable th i,
+table.pubbibsearhtable th i,
+table.pubbibtable th i {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+table.pubaddtable th:first-child,
+table.pubeditviewtable th:first-child,
+table.pubupdatetable th:first-child,
+table.pubbibtable th:first-child,
+table.pubprinttable th:first-child {
+    width: 100px;
+}
+
+table.pubaddtable th:last-child,
+table.pubupdatetable th:last-child,
+table.pubbibtable th:last-child {
+    width: 100px;
+}
+
+table.pubaddtable td a,
+table.pubeditviewtablesearchresult td a,
+table.pubupdatetable td a,
+table.pubbibsearchtable td a,
+table.pubbibtable td a {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 5px;
+    min-width: 24px;
+}
+
+table.pubaddtable td a.pubaddadd,
+table.pubupdatetable td a.pubupdateadd,
+table.pubbibtable td a.pubbibadd {
+    color: #27c46b;
+}
+
+table.pubaddtable td a.pubaddedit,
+table.pubupdatetable td a.pubupdateedit,
+table.pubbibtable td a.pubbibedit {
+    color: #ffc107;
+}
+
+table.pubaddtable td a.pubadddelete,
+table.pubupdatetable td a.pubupdatedelete,
+table.pubbibtable td a.pubbibdelete {
+    color: #e34724;
+}
+
+table.pubaddtable td i,
+table.pubeditviewtablesearchresult td i,
+table.pubupdatetable td i,
+table.pubbibtable td i {
+    font-size: 19px;
+}
+
+table.pubaddtable td a.pubaddadd i,
+table.pubupdatetable td a.pubupdateadd i,
+table.pubbibtable td a.pubbibadd i {
+    font-size: 24px;
+    margin-right: -1px;
+    position: relative;
+    top: 3px;
+}
+
+table.pubaddtable .form-control,
+table.pubupdatetable .form-control,
+table.pubbibtable .form-control {
+    height: 32px;
+    line-height: 32px;
+    box-shadow: none;
+    border-radius: 2px;
+}
+
+table.pubaddtable .form-control.error,
+table.pubupdatetable .form-control.error,
+table.pubbibtable .form-control.error {
+    border-color: #f50000;
+}
+
+table.pubaddtable td .pubaddadd,
+table.pubupdatetable td .pubupdateadd,
+table.pubbibtable td .pubbibadd {
+    display: none;
+}
+
+table.pubaddtable tbody tr:nth-of-type(odd),
+table.pubupdatetable tbody tr:nth-of-type(odd),
+table.pubbibtable tbody tr:nth-of-type(odd) {
+    background-color: #fcfcfc;
+}
+
+table.pubaddtable.table-hover tbody tr:hover,
+table.pubupdatetable.table-hover tbody tr:hover,
+table.pubbibtable.table-hover tbody tr:hover {
+    background: #f5f5f5;
+}
+
+.pubaddnavpage {
+    float: right;
+    /* display: none; */
+}
+
+th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+/******* publication author table *******/
+
+/******* publication editview, print *******/
+
+main.pubeditview #pubeditviewdate span:hover,
+main.pubprint #pubprintdate span:hover {
+    cursor: pointer;
+}
+
+.datepicker.datepicker-dropdown:before {
+    display: none;
+}
+
+main.pubeditview #pubeditviewdate,
+main.pubprint #pubprintdate {
+    background: #fff
+        url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)
+        97% 50% no-repeat;
+}
+
+.pubeditviewformcheck,
+.pubprintformcheck {
+    padding-bottom: 10%;
+}
+
+main.pubeditview .select-field,
+main.pubprint .select-field {
+    margin-left: 10%;
+    margin-right: 18%;
+    padding: 10% 7% 10% 0;
+}
+
+main.pubeditview .select-field-ranking,
+main.pubprint .select-field-ranking {
+    height: 90%;
+    max-height: 90%;
+}
+
+main.pubeditview .select-field-ranking .pubeditviewdivul,
+main.pubprint .select-field-ranking .pubprintdivul {
+    padding-right: 10%;
+    margin-top: 5%;
+    height: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+}
+
+main.pubeditview .select-field-ranking .pubeditviewdivul ul,
+main.pubprint .select-field-ranking .pubprintdivul ul {
+    max-height: 75%;
+}
+
+.pubeditviewtablediv,
+.pubprinttablediv {
+    height: 290px;
+    max-height: 290px;
+    overflow-y: auto;
+}
+
+table.pubeditviewtable,
+table.pubprinttable {
+    table-layout: fixed;
+    max-height: 290px;
+}
+
+/* custom checkbox */
+.custom-checkbox {
+    position: relative;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    margin: 5px 0 0 3px;
+    z-index: 9;
+}
+
+.custom-checkbox label:before {
+    width: 18px;
+    height: 18px;
+}
+
+.custom-checkbox label:before {
+    content: "";
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    background: white;
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label:after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 3px;
+    width: 6px;
+    height: 11px;
+    border: solid #000;
+    border-width: 0 3px 3px 0;
+    transform: inherit;
+    z-index: 3;
+    transform: rotateZ(45deg);
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label:before {
+    border-color: #71c1e6;
+    background: #71c1e6;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label:after {
+    border-color: #fff;
+}
+
+.custom-checkbox input[type="checkbox"]:disabled + label:before {
+    color: #b8b8b8;
+    cursor: auto;
+    box-shadow: none;
+    background: #ddd;
+}
+
+table.pubeditviewtablesearchresult td a.pubeditviewview {
+    color: #71c1e6;
+}
+table.pubeditviewtablesearchresult td a.pubeditviewedit {
+    color: #ffc107;
+}
+table.pubeditviewtablesearchresult td a.pubeditviewdelete {
+    color: #e34724;
+}
+
+table.pubeditviewtablesearchresult.table-hover tbody tr:hover {
+    background: #f5f5f5;
+}
+
+table.pubeditviewtablesearchresult th:first-child {
+    width: 15%;
+}
+
+table.pubeditviewtablesearchresult th:first-child {
+    width: 10%;
+}
+
+table.pubeditviewtablesearchresult .pubeditviewcategory {
+    width: 10%;
+}
+
+table.pubeditviewtablesearchresult th:last-child {
+    width: 17%;
+}
+
+table.pubeditviewtablesearchresult tbody td:last-child {
+    /* padding: 5px; */
+    text-align: center;
+}
+
+table.pubeditviewtablesearchresult tbody td {
+    font-size: 14px;
+}
+
+table.pubeditviewtablesearchresult #pubeditviewlastchildtd a i {
+    font-size: 1.2em;
+}
+
+table.pubeditviewtablesearchresult #pubeditviewlastchildtd {
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+.pubeditviewtabledivsearchresult {
+    height: 545px;
+    max-height: 545px;
+    overflow-y: auto;
+}
+
+table.pubeditviewtablesearchresult {
+    table-layout: fixed;
+    max-height: 545px;
+}
+
+.pubeditviewtabledivsearchresult {
+    position: relative;
+}
+
+.pubeditviewspan {
+    font-family: var(--Lobster);
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: #aaa;
+    opacity: 0;
+}
+
+.opacitydeactivate {
+    opacity: 0;
+}
+
+.opacityactivate {
+    opacity: 1;
+}
+
+/******* publication editview *******/
+
+/******* publication update *******/
+
+/******* publication update *******/
+
+/******* bibtex *******/
+
+.pubbib .pubbibparaonlybib {
+    color: #e34724;
+    font-weight: bold;
+    opacity: 0.4;
+}
+
+.pubbib .file-input {
+    /* display: inline-block; */
+    text-align: left;
+    background: #fff;
+    position: relative;
+    border-radius: 3px;
+}
+
+.pubbib .file-input > [type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.pubbib .file-input > .button {
+    display: inline-block;
+    cursor: pointer;
+    background: #eee;
+    padding: 8px 16px;
+    border-radius: 2px;
+    margin-right: 8px;
+}
+
+.pubbib .file-input:hover > .button {
+    background: #aaa;
+    color: white;
+}
+
+.pubbib .file-input > .label {
+    color: #333;
+    white-space: nowrap;
+    opacity: 0.3;
+}
+
+.pubbib .file-input.-chosen > .label {
+    opacity: 1;
+}
+
+table.pubbibsearchtable th:first-child {
+    width: 50px;
+}
+
+table.pubbibsearchtable .slno {
+    width: 55px;
+}
+
+table.pubbibtapubbibsearchtableble .dt {
+    width: 100px;
+}
+
+table.pubbibsearchtable th:last-child {
+    width: 50px;
+}
+
+/* table.pubbibsearchtable td a.pubbibdisplay {
+    color: #71c1e6;
+} */
+
+.noduplicate {
+    color: #71c1e6;
+}
+
+.duplicate {
+    color: #e34724;
+}
+
+tr.hide-table-padding td {
+    padding: 0;
+}
+
+.expand-button {
+    position: relative;
+}
+
+.accordion-toggle .expand-button:after {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    content: "-";
+}
+.accordion-toggle.collapsed .expand-button:after {
+    content: "+";
+}
+
+main.pubbib .container form .card.first {
+    opacity: 0;
+    pointer-events: none;
+}
+
+main.pubbib .container form .card.second {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.internalcol {
+    color: #313376;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+/******* bibtex *******/
